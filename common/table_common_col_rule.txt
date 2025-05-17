@@ -1,0 +1,9 @@
+# 一行一個規則，格式：alias1+alias2:unified
+stock_id+股票代號:stock_id
+成交量+volume:volume
+date+日期:date
+開盤價:open
+最高價:high
+最低價:low
+收盤價:close
+# 你可依需求增減或調整
