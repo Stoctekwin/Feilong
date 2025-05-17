@@ -49,10 +49,10 @@ git pull origin main
 
 ## 3. 建立 Python 虛擬環境（推薦 uv）
 
-### 3.1 安裝 uv（建議用 conda/python 執行）
-```powershell
-python -m pip install uv
-```
+### 3.1 安裝 uv
+```bash
+# Windows 環境下安裝 uv (僅需一次)
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
 ### 3.2 建立虛擬環境
 ```powershell
@@ -119,7 +119,7 @@ Windows Powershell：
 
 ---
 
-## 6. 參考文件
+## 7. 參考文件
 - [AI_Collaboration_Guide.md]
 - [README.md]
 - [CHANGELOG.md]
