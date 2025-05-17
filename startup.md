@@ -75,6 +75,40 @@ Windows Powershell：
 
 ---
 
+## 6. 首次啟動與資料初始化（**必讀！**）
+
+### 6.1 建立 `.env` 檔案
+請依照 `.env_sample` 建立 `.env`，並正確填入資料庫連線資訊（如 DB_HOST、DB_PORT、DB_USER、DB_PASSWORD、DB_NAME）。
+
+### 6.2 產生必要的 hash 對應檔案
+本專案所有技術指標與查詢皆依賴 hash 對應檔案，首次執行前請務必先產生：
+```powershell
+.venv\Scripts\python.exe table_column_hash_util.py
+```
+- 若遇到終端機顯示中文亂碼或報 UnicodeEncodeError，請將 `table_column_hash_util.py` 開頭加入：
+  ```python
+  import sys
+  sys.stdout.reconfigure(encoding='utf-8')
+  ```
+
+### 6.3 執行策略範例或主流程腳本
+以範例策略腳本為例：
+```powershell
+.venv\Scripts\python.exe strategy_template.py
+```
+- 若遇到終端機顯示中文亂碼或報 UnicodeEncodeError，請將你的腳本開頭加入：
+  ```python
+  import sys
+  sys.stdout.reconfigure(encoding='utf-8')
+  ```
+
+### 6.4 常見問題
+- 若出現 `找不到 hash 檔案`，請務必先執行上方 6.2 步驟。
+- 若資料庫連線錯誤，請檢查 `.env` 配置與資料庫服務狀態。
+- 若遇到依賴缺失，可重複執行 `uv pip install -r requirements.txt`。
+
+---
+
 ## 5. 常見問題排查
 - 若出現 `pip`、`uv` 指令找不到，請確認 Python 路徑與安裝方式（可用 conda/python.exe 明確指定執行）。
 - 若 `.venv` 內缺少 pip，可用：
